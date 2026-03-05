@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ferimentos — Clique Salve</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/samu.css">
+</head>
+<body class="samu-page">
+  <header class="header">
+    <div class="header-item" onclick="location.href='../index.html';" role="button" tabindex="0">
+      <img src="../paginas-layout/saude.jpg" alt="Logo Clique Salve">
+      <h1>Clique Salve</h1>
+    </div>
+  </header>
+  <div class="container">
+    <header class="page-header">
+      <h1>Ferimentos e Lesões</h1>
+      <p>Aprenda como prestar primeiros socorros em ferimentos e lesões.</p>
+    </header>
+
+    <div class="ferimentos-images">
+      <div class="ferimentos-img-wrapper">
+        <img class="ferimentos-illustration clickable-image" src="../Imagens-projeto/Ferimentos.png" alt="Ferimentos simples">
+        <div class="img-caption">Ferimentos em geral — limpe com água, aplique pressão para estancar sangue.</div>
+      </div>
+
+      <div class="ferimentos-img-wrapper">
+        <img class="ferimentos-illustration clickable-image" src="../Imagens-projeto/Ferimentos 2.png" alt="Ferimentos graves">
+        <div class="img-caption">Ferimentos graves — mantenha pressão constante e imobilize a área afetada.</div>
+      </div>
+      
+      <div class="ferimentos-img-wrapper">
+        <img class="ferimentos-illustration clickable-image" src="../Imagens-projeto/Ferimentos 3.png" alt="Ferimentos com sangramento">
+        <div class="img-caption">Sangramento intenso — eleve o membro afetado e procure ajuda médica imediatamente.</div>
+      </div>
+    </div>
+
+    <div class="instructions-card" role="region" aria-label="Instruções para ferimentos">
+      <h2>O que fazer em caso de ferimentos</h2>
+      
+      <h3>Ferimentos leves:</h3>
+      <ul>
+        <li>Lave o ferimento com água corrente e sabão suave.</li>
+        <li>Seque com uma toalha limpa.</li>
+        <li>Aplique desinfetante (álcool 70% ou água oxigenada).</li>
+        <li>Cubra com gaze ou curativo se necessário.</li>
+      </ul>
+
+      <h3>Ferimentos com sangramento moderado:</h3>
+      <ul>
+        <li>Aplique pressão direta com gaze limpa por 10-15 minutos.</li>
+        <li>Se sangrar muito, não remova o primeiro curativo — coloque outro por cima.</li>
+        <li>Eleve o membro afetado acima do coração para reduzir sangramento.</li>
+        <li>Limpe suavemente com água morna quando o sangramento parar.</li>
+        <li>Procure atendimento médico se continuar sangrando após 15 minutos.</li>
+      </ul>
+
+      <h3>Ferimentos graves/sangramento intenso:</h3>
+      <ul>
+        <li>Ligue para SAMU imediatamente (192).</li>
+        <li>Aplique pressão forte e contínua com pano limpo ou faixa.</li>
+        <li>Se possível, eleve o membro afetado.</li>
+        <li>Mantenha a vítima deitada e aquecida.</li>
+        <li>Não remova objeto cravado — estabilize-o apenas.</li>
+      </ul>
+
+      <h3>Ferimentos com sensibilidade comprometida:</h3>
+      <ul>
+        <li>Procure atendimento médico — pode indicar lesão de nervo.</li>
+        <li>Mantenha a área limpa e protegida.</li>
+        <li>Evite movimentos bruscos.</li>
+      </ul>
+
+      <div class="actions">
+        <a class="btn btn-call" href="tel:192">Ligar para SAMU</a>
+        <a class="btn btn-back" href="../index.html">Voltar</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para imagem ampliada -->
+  <div id="imageModal" class="image-modal">
+    <div class="image-modal-content">
+      <span class="image-modal-close">&times;</span>
+      <img class="image-modal-img" src="" alt="">
+      <button class="image-modal-back">Voltar</button>
+    </div>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>
+

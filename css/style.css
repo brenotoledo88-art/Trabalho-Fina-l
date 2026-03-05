@@ -1,0 +1,364 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f0f4f9, #e8f0f7);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ---------------- HEADER ---------------- */
+
+header {
+  display: flex;
+  justify-content: center; /* always center logo+text */
+  align-items: center;
+  position: relative; /* container for absolute home button */
+  background: #ffffff;
+  padding: 15px 40px;
+  border-bottom: 3px solid #0066cc;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ensure headers use the same typeface */
+header h1,
+.page-header h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.header-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin: 0 auto; /* center inside header */
+  text-align: center;
+}
+
+.header-item img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+}
+
+.header-item:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Force precise vertical centering of the header text next to the logo */
+.header-item h1 {
+  margin: 0;                 /* remove any residual margins */
+  line-height: 1;            /* avoid extra line spacing */
+  display: inline-block;     /* keep h1 sized to content */
+  vertical-align: middle;    /* fallback for non-flex contexts */
+  align-self: center;        /* ensures vertical centering inside the flex container */
+  font-size: 1.6rem;         /* increased for better readability and balance with logo */
+  font-weight: 700;
+}
+
+/* More specific fallbacks to force pixel-aligned centering
+   - Ensure the header-item is a flex row and the logo is a block
+   - Use explicit line-height equal to the logo height as a robust fallback
+*/
+.header .header-item { display: flex; align-items: center; }
+.header-item img { display: block; }
+.header .header-item h1 { line-height: 65px; }
+
+.BotaoLigar img {
+    width: 70px;
+    height: 70px;
+}
+
+.BotaoLigar {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border-radius: 50%;
+    transition: transform 0.25s ease;
+}
+
+.BotaoLigar:hover {
+    transform: scale(1.12); /* aumenta 12% */
+}
+
+
+/* ---------------- GRID DAS SITUAÇÕES ---------------- */
+
+.layout {
+  padding: 30px 20px;
+}
+
+.situacoes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+  grid-template-rows: repeat(2, auto);   /* 2 linhas */
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+
+/* ---------------- CARDS ---------------- */
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px 10px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.card img {
+  width: 200px;
+  height: 200px;
+}
+
+.card h2 {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  color: #222;
+}
+
+
+/* Tablets e telas médias ─ 2 colunas */
+@media (max-width: 1024px) {
+  .situacoes {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  header {
+    padding: 15px 20px;
+  }
+}
+
+/* Celulares ─ 1 coluna */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .situacoes {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .header-item img {
+    width: 55px;
+    height: 55px;
+  }
+
+  /* keep header text aligned with the smaller logo on mobile */
+  .header-item h1 { font-size: 1.3rem; }
+  .header .header-item h1 { line-height: 55px; }
+
+  .card img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+ .BotaoLigar{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(90deg, #ff6b35, #ff5722);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 25px;
+    font-size: 1rem;
+    box-shadow: 0 6px 15px rgba(255, 107, 53, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000;
+ }
+
+/* ---------------- FOOTER ---------------- */
+.site-footer {
+  margin-top: auto;     /* empurra o footer pro fim da tela */
+  background: rgba(0,0,0,0.06);
+  padding: 24px 20px 12px;
+}
+
+.footer-inner{
+  max-width:1100px;
+  margin:0 auto 12px;
+  display:flex;
+  gap:500px;
+  justify-content:space-between;
+  align-items:flex-start;
+}
+.footer-column{flex:1;min-width:180px}
+.footer-column h4{margin-bottom:8px;color:#0066cc}
+.footer-column p{font-size:0.95rem;color:#333333;line-height:1.4}
+.footer-links ul{list-style:none;padding:0}
+.footer-links a{color:#0066cc;text-decoration:none}
+.footer-links li{margin-bottom:6px}
+.footer-contact strong{display:inline-block;width:90px}
+.footer-bottom{max-width:1100px;margin:0 auto;text-align:center;padding-top:6px;border-top:1px solid rgba(0,102,204,0.1);color:#666666}
+
+@media (max-width:900px){
+  .footer-inner{flex-direction:column;gap:14px;align-items:center;text-align:center}
+  .footer-contact strong{width:auto}
+}
+
+/* ---------------- MODAL ---------------- */
+
+.Modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    padding: 20px;
+}
+
+.Modal.show {
+    display: flex;
+}
+
+.Modal-content {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: fadeIn .25s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.close-button {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: bold;
+    color: #444;
+}
+
+.emergency-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn-emergency {
+    padding: 12px;
+    background: #0066cc;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+}
+
+.btn-emergency:hover {
+    background: #0052a3;
+}
+/* ---------------- IMAGE MODAL ---------------- */
+/* (existing rules start earlier, but ensure video modal has similar look) */
+
+/* ---------------- VIDEO MODAL ---------------- */
+.video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1002;
+    padding: 20px;
+}
+
+.video-modal.show {
+    display: flex;
+}
+
+.video-modal-content {
+    position: relative;
+    /* use viewport width to stay within screen bounds */
+    max-width: 90vw;
+    max-height: 90vh;
+    width: 100%;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    animation: fadeIn .25s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-modal-player {
+    /* scale video to fit container while preserving aspect ratio */
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.video-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    z-index: 1003;
+}
+
+.video-modal-back {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    padding: 8px 12px;
+    background: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 1003;
+}
